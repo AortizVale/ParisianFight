@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cafe61f86611824888fb6871286dcca, type: 3}
+  m_Name: CharacterDatabase
+  m_EditorClassIdentifier: 
+  character:
+  - characterName: Majo
+    characterMenuSprite: {fileID: 21300000, guid: e15b8ca0c0c270c46b9314170857b29a, type: 3}
+    characterSiluette: {fileID: 21300000, guid: 842a641159336c24aa57e2a55b88e5f0, type: 3}
+    charaterSiluettePoints: {fileID: 21300000, guid: 67f58c568d870724cb6ac22f141d17ce, type: 3}
+  - characterName: Polnareff
+    characterMenuSprite: {fileID: 21300000, guid: f71f245f191d3e2419041e7d4179cd1a, type: 3}
+    characterSiluette: {fileID: 21300000, guid: 5e085fec0b37ac24989c8f9861c728f7, type: 3}
+    charaterSiluettePoints: {fileID: 21300000, guid: 5380dd50d50777744b3f02307031978e, type: 3}
+  - characterName: Haruna
+    characterMenuSprite: {fileID: 21300000, guid: f043affa4891fd849a77f98a34214d00, type: 3}
+    characterSiluette: {fileID: 21300000, guid: 499e5594a4bfb5a45a31d46fcf1223a8, type: 3}
+    charaterSiluettePoints: {fileID: 21300000, guid: b5a4b41908ff74149931af75e1157231, type: 3}
