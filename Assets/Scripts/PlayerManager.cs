@@ -4,7 +4,6 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.InputSystem;
 
-
 public class PlayerManager : MonoBehaviour
 {
     private List<PlayerInput> players = new List<PlayerInput>();
@@ -21,7 +20,38 @@ public class PlayerManager : MonoBehaviour
 
     // Lista de tags para los jugadores.
     private readonly string[] playerTags = { "Player1", "Player2" };
+    //Lista de layers para hitbox y hu
+    private readonly string[] hitboxLayers = { "HitboxPlayer1", "HitboxPlayer2" };
+    private readonly string[] hurtboxLayers = { "HurtboxPlayer1", "HurtboxPlayer2" };
 
+    void Update()
+    {
+
+        // Con esto se verifica que los jugadores siempre se esten mirando entre si
+
+        if (players.Count >= 2)
+        {
+            // Obtiene las posiciones en X de los dos elementos
+            float x1 = players[0].transform.position.x;
+            float x2 = players[1].transform.position.x;
+
+            // Compara las posiciones y asigna rotaciones
+            if (x1 < x2)
+            {
+                // El primer jugador está a la izquierda, rotación en Y = 0
+                players[0].transform.rotation = Quaternion.Euler(0, 0, 0);
+                // El segundo jugador está a la derecha, rotación en Y = 180
+                players[1].transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            else
+            {
+                // El segundo jugador está a la izquierda, rotación en Y = 0
+                players[1].transform.rotation = Quaternion.Euler(0, 0, 0);
+                // El primer jugador está a la derecha, rotación en Y = 180
+                players[0].transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
+    }
     private void Awake()
     {
         playerInputManager = FindObjectOfType<PlayerInputManager>();
@@ -66,10 +96,14 @@ public class PlayerManager : MonoBehaviour
         if (players.Count <= playerTags.Length)
         {
             player.gameObject.tag = playerTags[players.Count - 1];
+
         }
         else
         {
             Debug.LogError("No hay suficientes tags definidos para más jugadores.");
         }
+
+        //Asignar los layers de hitbox hurtbox
+        
     }
 }

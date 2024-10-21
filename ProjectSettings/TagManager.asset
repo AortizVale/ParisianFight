@@ -15,10 +15,10 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
-  - 
-  - 
-  - 
+  - HitboxPlayer1
+  - HurtboxPlayer1
+  - HitboxPlayer2
+  - HurtboxPlayer2
   - 
   - 
   - 
